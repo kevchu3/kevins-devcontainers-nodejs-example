@@ -50,6 +50,12 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "yarn install"
 
+	// Map user account to same UID within container
+	// More info: https://docs.podman.io/en/latest/markdown/podman-pod-create.1.html#userns-mode
+	"runArgs": [
+		"--userns=keep-id"
+	],
+
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 }
